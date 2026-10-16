@@ -1,0 +1,11 @@
+services:
+  bahn-statistik:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3050:3050"
+    volumes:
+      - ./daten:/daten
+    environment:
+      # Kontakt für Transitous, bitte anpassen.
+      USER_AGENT: "bahn-statistik/0.1 (+https://github.com/rathjenick/bahn-statistik)"
